@@ -1,0 +1,638 @@
+/* Basic Reset */
+* {
+    font-family: 'Montserrat', 'Arial Narrow', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*==================LOGIN=====================*/
+@keyframes zoomIn {
+    0% {
+        opacity: 0; /* الصورة مخفية */
+        transform: scale(0.8); /* بداية الصورة أصغر */
+    }
+    100% {
+        opacity: 1; /* الصورة تظهر */
+        transform: scale(1); /* تكبير الصورة إلى حجمها الطبيعي */
+    }
+}
+
+/* تطبيق الأنيميشن على الصورة */
+
+
+#login_page {
+    display: flex;
+    gap: 100px;
+    
+}
+#login_page{
+    width: 100%; /* تعيين عرض الصورة */
+    height: auto; /* الحفاظ على النسبة الأصلية */
+    animation: zoomIn 2s ease-out; /* تطبيق الأنيميشن مع تحديد المدة */
+    
+}
+#login_header {
+    margin: 80px 0;
+    /*border: #5b69c3 2px solid ;*/
+    border-radius: 20px;
+    height: 600px;
+    width: 500px;
+    padding: 40px;
+    text-align: center;
+    background-color: #f0ece4;
+    box-shadow: 5px 5px 15px gray ;
+
+}
+
+#login_word {
+    color: #5b69c3;
+}
+
+#img_icon {
+    height: 150px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+#form_sumbit {
+    width: 60%;
+    padding: 10px;
+    margin-block-start: 30px;
+    background-color: #5b69c3;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+#form_sumbit:hover{
+    background-color:#719fe0;
+    color: #ffff;
+}
+
+
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar Container 
+.header_container {
+    padding-block-start: 80px; /* لإضافة مسافة فوق المحتوى لتجنب تداخل الشريط 
+    line-height: 1.6;
+    padding: 20px;
+   
+    
+}*/
+
+/* Navbar Styles */
+.nav-bar {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    /* Center items vertically */
+    justify-content: space-between;
+    /* Space between logo and links */
+    padding-block: 30px;
+    /* Padding for the navbar */
+
+    padding-inline-start: 100px;
+    padding-inline-end: 870px;
+    background-color: #f0ece4;
+
+    z-index: 1000;
+    /* لجعل الشريط يظهر فوق العناصر الأخرى */
+}
+
+/* Logo Styling */
+.nav-bar p {
+    color: #333;
+    /* Text color for the logo */
+    font-size: 1.5em;
+    /* Size of the logo text */
+
+}
+
+/* Nav Links Styling */
+.nav-links {
+    display: flex;
+    /* Display links in a row */
+    list-style: none;
+    /* Remove bullets from list */
+}
+
+.nav-links li {
+    margin-inline-start: 60px;
+    /* Space between the links */
+}
+
+.nav-links a {
+    color: #333;
+    /* Link text color */
+    text-decoration: none;
+    /* Remove underline */
+    font-size: 1em;
+    /* Font size for links */
+
+}
+
+/* Hover Effect */
+.nav-links a:hover {
+    color: #717fe0;
+    /* Change color on hover */
+}
+/*=====================slider=====================*/
+.banner {
+    display: flex;
+    align-items: center;
+    background-color: #f0ece4;
+    padding: 150px 150px 110px;
+    gap: 100px;
+}
+.banner-content {
+    max-inline-size: 50%;
+}
+
+.banner-content h2 {
+    font-size: 28px;
+    font-weight: normal;
+    margin-block-end: 20px;
+    color: #333;
+}
+
+.banner-content h1 {
+    font-size: 60px;
+    font-weight: bold;
+    color: #333;
+    margin-block-end: 20px;
+}
+
+.shop-now {
+
+    padding: 10px 20px;
+    background-color: #717fe0;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 50px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.shop-now:hover {
+    background-color: #45a049;
+}
+
+.banner-img {
+    max-inline-size: 50%;
+
+}
+
+.banner-img img {
+    inline-size: 100%;
+    max-inline-size: 700px;
+}
+
+
+.categories {
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    padding-block: 100px;
+    block-size: 100%;
+}
+
+.women, .men, .accessories {
+    border: solid rgb(215, 209, 209) .5px;
+    inline-size: 400px;
+    block-size: 250px;
+    display: flex;
+    flex-direction: row;
+    /* Aligns text and image side by side */
+    align-items: center;
+    padding-inline-start: 40px;
+    gap: 25px;
+    /* Space between text and image */
+}
+
+.women:hover, .men:hover, .accessories:hover {
+    background-color: #8491e35b;
+}
+
+.text-content {
+    font-family: Arial, sans-serif;
+}
+
+.text-content h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.text-content h4 {
+    font-size: 20px;
+    color: #888;
+    margin: 5px 0 0;
+}
+
+.women img, .men img, .accessories img {
+    inline-size: 50%;
+    /* Set width for the image */
+    block-size: auto;
+    object-fit: cover;
+    /* Ensures the image covers its area without distortion */
+}
+
+.icons {
+    display: flex;
+    flex-direction: row;
+    /* Aligns text and image side by side */
+    align-items: center;
+    padding-inline-start: 76px;
+    block-size: 300px;
+    gap: 850px;
+    /* Space between text and image */
+}
+
+h1 {
+    font-size: 36px;
+}
+
+.button-container {
+    display: flex;
+    /* Aligns buttons horizontally */
+    gap: 10px;
+    /* Adds space between the buttons */
+    padding-inline-end: 20px;
+}
+
+.icon-button {
+    background-color: transparent;
+    /* Removes default button background */
+    border: 1px solid #ccc;
+    /* Adds a subtle border */
+    padding: 8px 15px;
+    /* Adds padding around the icon and text */
+    cursor: pointer;
+    /* Changes cursor to pointer on hover */
+    display: flex;
+    /* Aligns icon and text horizontally */
+    align-items: center;
+    /* Centers icon and text vertically */
+    border-radius: 8px;
+    /* Slightly rounded corners */
+    gap: 8px;
+    /* Adds space between icon and text */
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+
+.icon-button:hover {
+    background-color: #7180e0;
+    /* Changes background color on hover */
+    border-color: #999;
+    /* Changes border color on hover */
+    color: white;
+}
+
+
+.productoverview {
+    padding-inline: 50px;
+    display: flex;
+    flex-wrap: wrap; /* يسمح للعناصر بالتوزيع عبر عدة صفوف */
+    gap: 40px; /* مسافة بين العناصر */
+    justify-content: space-between; /* توزيع العناصر بشكل متساوي عبر الصف */
+}
+
+.product-details {
+    background-color: #fff; /* خلفية بيضاء ناعمة */
+    padding: 15px;
+    border-radius: 10px; /* جعل الزوايا مدورة بشكل أكبر */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* إضافة ظل ناعم */
+    text-align: center; /* محاذاة النص إلى الوسط */
+    width: calc(20% - 20px); /* عرض كل عنصر 20% من الحاوية مع المسافات */
+    box-sizing: border-box; /* التأكد من أن المسافات لا تؤثر على الأبعاد */
+    transition: transform 0.3s ease-in-out; /* إضافة تأثير ناعم عند التفاعل */
+    border: 1px solid #e0e0e0; /* إضافة حدود رقيقة */
+}
+
+.product-details:hover {
+    transform: translateY(-10px); /* رفع العنصر عند التفاعل */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* تعزيز الظل عند hover */
+}
+
+.product-img {
+    width: 100%;
+    padding-block: 20px;
+    border-radius: 8px; /* جعل حواف الصور مدورة */
+}
+
+.product-img img {
+    width: 100%;
+    aspect-ratio: 1 / 1.2; /* الحفاظ على النسبة بين العرض والطول */
+    object-fit: cover; /* تجعل الصورة تملأ الإطار */
+    display: block;
+    transition: transform 0.3s ease, filter 0.3s ease; /* تأثير ناعم عند التفاعل مع الصورة */
+    border-radius: 8px; /* إضافة حواف مدورة للصورة */
+}
+
+.product-img img:hover {
+    transform: scale(1.05); /* تكبير الصورة بشكل ناعم عند hover */
+    filter: brightness(0.95); /* تعديل السطوع عند hover */
+}
+
+.loadmore {
+    display: flex;
+    justify-content: center;
+    /* محاذاة أفقية للزر */
+    padding-block: 100px;
+
+}
+
+.loadmore-button {
+    padding: 12px 25px;
+    /* حجم الزر */
+    font-size: 1.2em;
+    /* حجم النص */
+    color: black;
+    /* لون النص */
+    background-color: #DDDDDD;
+    /* لون الخلفية الأساسي للزر */
+    border: none;
+    /* إزالة الحدود */
+    border-radius: 24px;
+    /* زوايا دائرية */
+    cursor: pointer;
+    /* شكل المؤشر عندما يكون فوق الزر */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    /* تأثير التغيير */
+}
+
+.loadmore-button:hover {
+    background-color: black;
+    color: #DDDDDD;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #222;
+    color: #ccc;
+    padding: 70px 20px;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-inline-size: 1200px;
+    margin: 0 auto;
+
+}
+
+.footer-column {
+    flex: 1;
+    min-inline-size: 200px;
+}
+
+.footer-column>h3 {
+    color: #fff;
+    margin-block-end: 30px;
+    font-size: 1.2em;
+}
+
+.footer-column ul {
+    list-style: none;
+
+}
+
+.footer-column ul li {
+    margin-block-end: 15px;
+    color: #ccc;
+    font-size: 0.8em;
+}
+
+.footer-column ul li:hover {
+    color: #717fe0;
+    cursor: pointer;
+}
+
+.footer-column p {
+    font-size: 0.8em;
+    line-height: 1.6;
+}
+
+.footer-column input[type="email"] {
+    inline-size: 100%;
+    padding: 10px;
+    margin-block-start: 10px;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    outline: none;
+    font-size: 0.9em;
+}
+
+.footer-column button {
+    inline-size: 100%;
+    padding: 10px;
+    background-color: #717fe0;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-block-start: 10px;
+    font-size: 0.9em;
+}
+
+.footer-column button:hover {
+    color: #5b69c3;
+    background-color: white
+}
+
+
+
+/* Footer Bottom */
+.footer-bottom {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 0.9em;
+    padding: 20px 0;
+    border-top: 1px solid #444;
+}
+
+.footer-bottom a {
+    color: #717fe0;
+    text-decoration: none;
+}
+
+.footer-bottom a:hover {
+    text-decoration: underline;
+}
+
+.payment-icons {
+    margin-top: 10px;
+}
+
+.payment-icons img {
+    width: 40px;
+    height: 25px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.about, .contact {
+    padding-block-start: 60px;
+}
+
+.about-img, .contact-img {
+    width: 100%;
+    /* يقلل عرض الصورة إلى 50% من عرض العنصر الحاوي */
+    height: auto;
+    /* يحافظ على نسبة العرض إلى الارتفاع الأصلية */
+
+}
+
+.storyANDimg, .missionANDimg {
+    display: flex;
+}
+
+.story, .mission {
+    margin-block: 100px;
+    padding-inline: 100px;
+    color: #444;
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 1.5;
+
+}
+
+.mission-image, .story-img {
+    margin-inline: 50px;
+    margin-block: 100px;
+    transition: 0.5s;
+}
+
+.mission-image:hover, .story-img:hover {
+    transform: scale(1.1);
+}
+
+.story>h2, .mission>h2 {
+    margin-block: 40px;
+    font-size: 28px;
+}
+
+
+.container {
+    display: flex;
+    max-width: 100%;
+
+    background-color: #fff;
+    margin-block: 50px;
+    margin-inline: 100px;
+    padding-inline: 70px;
+    padding-block: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.contact-form {
+    flex: 1;
+    margin-right: 100px;
+}
+
+.contact-info {
+
+    flex: 1;
+    padding-left: 100px;
+    border-left: 3px solid #ddd;
+}
+
+.contact-form h2,
+.contact-info h3 {
+    margin-bottom: 40px;
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 15px;
+    color: #666;
+    font-weight: 500;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.input-group textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.submit {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #333;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 22px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #717fe0;
+}
+
+.contact-info .info-group {
+    margin-block-end: 20px;
+}
+
+.contact-info h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: start;
+}
+
+.contact-info p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.contact-info a {
+    color: #717fe0;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    color: #719fe0;
+}
