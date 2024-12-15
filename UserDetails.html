@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="UserDetails.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="nav-bar">
+      <div class="logo">
+        <p><span style="font-weight: bold">Shop</span>Ease</p>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Shop</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <div class="nav-icons">
+        <a href="login.html" class="login-icon">
+          <i class="fa fa-user"></i>
+        </a>
+        <a href="#" class="cart-icon"
+          ><i class="fa-solid fa-cart-shopping"></i
+          ><span class="cart-count">3</span></a
+        >
+      </div>
+    </header>
+
+    <!-- <p>Your Cart</p> -->
+    <div class="all">
+      <div class="shipping-form-container">
+        <h2>Shipping Information</h2>
+        <form action="/submit-shipping" method="POST">
+          <div class="form-group">
+            <label for="full-name">Full Name</label>
+            <input
+              type="text"
+              id="full-name"
+              name="full_name"
+              placeholder="Enter your full name"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter your email address"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="address">Shipping Address</label>
+            <textarea
+              id="address"
+              name="address"
+              placeholder="Enter your full shipping address"
+              required
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="country">Country</label>
+            <select id="country" name="country" required>
+              <option value="" disabled selected>Select your country</option>
+              <option value="US">United States</option>
+              <option value="CA">Canada</option>
+              <option value="UK">United Kingdom</option>
+              <option value="AU">Australia</option>
+              <option value="IN">India</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="city">City</label>
+            <input
+              type="text"
+              id="city"
+              name="city"
+              placeholder="Enter your city"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="zip">Zip Code</label>
+            <input
+              type="text"
+              id="zip"
+              name="zip"
+              placeholder="Enter your zip code"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="Enter your phone number"
+              required
+            />
+          </div>
+
+          <div class="form-actions">
+            <button type="submit">Submit Order</button>
+          </div>
+        </form>
+      </div>
+      <div class="Summary">
+        <p>Summary</p>
+        <div class="nameproduct">
+          <p>Product</p>
+          <p>Subtotal</p>
+        </div>
+        <div class="nameproduct1">
+          <p>Lip gloss</p>
+          <p>312$</p>
+        </div>
+        <div class="nameproduct1">
+          <p>Lip gloss</p>
+          <p>312$</p>
+        </div>
+        <div class="shipping">
+          <label>
+            <input type="radio" name="shipping" value="local" />
+            Free Shipping
+          </label>
+          <label>
+            <input type="radio" name="shipping" value="free" checked />
+            Local Shipping
+          </label>
+        </div>
+        <div class="nameproduct">
+          <p>Total</p>
+          <p>125$</p>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-column">
+          <h3>Categories</h3>
+          <ul>
+            <li>Women</li>
+            <li>Men</li>
+            <li>Shoes</li>
+            <li>Watches</li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>HELP</h3>
+          <ul>
+            <li>Track Order</li>
+            <li>Returns</li>
+            <li>Shipping</li>
+            <li>FAQs</li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>GET IN TOUCH</h3>
+          <p>
+            Any questions? Let us know in store at 8th <br />floor, 379 Hudson
+            St, New York, NY 10018 or <br />
+            call us on (+1) 96 716 6879
+          </p>
+        </div>
+        <div class="footer-column">
+          <h3>NEWSLETTER</h3>
+          <form action="first-page.html" method="GET">
+            <input
+              type="email"
+              name="email"
+              placeholder="email@example.com"
+              required
+            />
+            <button type="submit">SUBSCRIBE</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          Copyright ©2024 All rights reserved ❤️ to <a href="#">AuraVogue</a>
+        </p>
+        <div class="payment-icons">
+          <img src="images\paypal.png" alt="Paypal" />
+          <img src="images\visa.png" alt="Visa" />
+          <img src="images\mastercard.png" alt="MasterCard" />
+        </div>
+      </div>
+    </footer>
+
+    <script src="./script2.js"></script>
+  </body>
+</html>
