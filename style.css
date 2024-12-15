@@ -87,14 +87,6 @@ body {
     font-family: Arial, sans-serif;
 }
 
-/* Navbar Container 
-.header_container {
-    padding-block-start: 80px; /* لإضافة مسافة فوق المحتوى لتجنب تداخل الشريط 
-    line-height: 1.6;
-    padding: 20px;
-   
-    
-}*/
 
 /* Navbar Styles */
 .nav-bar {
@@ -145,6 +137,12 @@ body {
     font-size: 1em;
     /* Font size for links */
 
+}
+#cart{
+    margin-inline-start: 800px;
+}
+#logout{
+    margin-inline-start: 900px;
 }
 
 /* Hover Effect */
@@ -221,7 +219,6 @@ body {
     block-size: 250px;
     display: flex;
     flex-direction: row;
-    /* Aligns text and image side by side */
     align-items: center;
     padding-inline-start: 40px;
     gap: 25px;
@@ -230,6 +227,8 @@ body {
 
 .women:hover, .men:hover, .accessories:hover {
     background-color: #8491e35b;
+    transform: scale(1.1);
+    transition: 1s ease;
 }
 
 .text-content {
@@ -250,10 +249,8 @@ body {
 
 .women img, .men img, .accessories img {
     inline-size: 50%;
-    /* Set width for the image */
     block-size: auto;
     object-fit: cover;
-    /* Ensures the image covers its area without distortion */
 }
 
 .icons {
@@ -263,7 +260,7 @@ body {
     align-items: center;
     padding-inline-start: 76px;
     block-size: 300px;
-    gap: 850px;
+    gap: 750px;
     /* Space between text and image */
 }
 
@@ -278,6 +275,10 @@ h1 {
     /* Adds space between the buttons */
     padding-inline-end: 20px;
 }
+#search{
+    border: none;
+}
+
 
 .icon-button {
     background-color: transparent;
@@ -310,25 +311,38 @@ h1 {
 
 
 .productoverview {
-    padding-inline: 50px;
+    padding-inline: 150px;
     display: flex;
     flex-wrap: wrap; /* يسمح للعناصر بالتوزيع عبر عدة صفوف */
-    gap: 40px; /* مسافة بين العناصر */
+    gap: 20px; /* مسافة بين العناصر */
     justify-content: space-between; /* توزيع العناصر بشكل متساوي عبر الصف */
 }
 
 .product-details {
-    background-color: #fff; /* خلفية بيضاء ناعمة */
+    background-color: #fff; 
     padding: 15px;
     border-radius: 10px; /* جعل الزوايا مدورة بشكل أكبر */
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* إضافة ظل ناعم */
     text-align: center; /* محاذاة النص إلى الوسط */
-    width: calc(20% - 20px); /* عرض كل عنصر 20% من الحاوية مع المسافات */
+    width:250px;
     box-sizing: border-box; /* التأكد من أن المسافات لا تؤثر على الأبعاد */
     transition: transform 0.3s ease-in-out; /* إضافة تأثير ناعم عند التفاعل */
     border: 1px solid #e0e0e0; /* إضافة حدود رقيقة */
 }
-
+.product_title{
+    color: black;
+    font-size: 12px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+}
+.product_title:hover{
+    font-weight: bold;
+}
+.product_price{
+    padding: 5px;
+    color: #45a049;
+   
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 .product-details:hover {
     transform: translateY(-10px); /* رفع العنصر عند التفاعل */
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* تعزيز الظل عند hover */

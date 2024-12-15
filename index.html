@@ -59,30 +59,30 @@
     <section class="icons" id="icons">
         <h1>Product Overview</h1>
         <div class="button-container">
-            <button class="icon-button">
-                <span>Filter</span>
-                <i class="fa-solid fa-sort-down"></i>
-            </button>
+            <select id="categorySelect" class="icon-button">
+                <option value="all">All Categories</option>
+                <option value="tv">TV</option>
+                <option value="audio">Audio</option>
+                <option value="laptop">Laptop</option>
+                <option value="mobile">Mobile</option>
+                <option value="gaming">Gaming</option>
+                <option value="appliances">Appliances</option>
+            </select>
+          
             <button class="icon-button">
                 <i class="fa-solid fa-magnifying-glass"></i>
-                <span>Search</span>
+                <input id="search" type="search">
             </button>
         </div>
     </section>
-    <div class="category-filter">
-        <select id="categorySelect">
-            <option value="all">All Categories</option>
-            <option value="electronics">Electronics</option>
-            <option value="jewelery">Jewelry</option>
-            <option value="men's clothing">Men's Clothing</option>
-            <option value="women's clothing">Women's Clothing</option>
-        </select>
-    </div>
+    
     <section class="productoverview">
-        <div class="products">
+        
             <!-- المنتجات ستظهر هنا -->
-        </div>
+       
     </section>
+    
+    
     
     <div class="loadmore">
         <button class="loadmore-button">LOAD MORE</button>

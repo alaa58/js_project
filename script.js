@@ -1,11 +1,3 @@
-/*====================login================*/
-
-
-
-
-
-
-
 
 /*================navbar&footer===========*/
 function loadNavbar() {
@@ -52,19 +44,19 @@ function updateSliderContent(index) {
         sliderImage.style.opacity = 1;
     }, 500);
 }
-
-// تغيير الصورة تلقائيًا كل 3 ثواني
 setInterval(() => {
-    currentIndex = (currentIndex + 1) % images.length; // تحديث الفهرس بشكل دائري
+    currentIndex = (currentIndex + 1) % images.length; 
     updateSliderContent(currentIndex);
 }, 3000);
-
-// أول تحديث للصورة عند تحميل الصفحة
 updateSliderContent(currentIndex);
-https://fakestoreapi.in/api/products
 
 /*====================products====================*/
+
 document.addEventListener('DOMContentLoaded', () => {
+    let allProducts = []; // تخزين جميع المنتجات
+    const categorySelect = document.getElementById('categorySelect');
+    const productsContainer = document.querySelector('.productoverview ');
+    
     async function fetchProducts() {
         try {
             const response = await fetch('https://fakestoreapi.in/api/products');
@@ -78,20 +70,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // التحقق من محتوى البيانات
             if (data && data.products && Array.isArray(data.products)) {
-                const productsContainer = document.querySelector('.productoverview');
+                allProducts = data.products; // تخزين جميع المنتجات
+
+                // التأكد من وجود عنصر المنتجات
                 if (productsContainer) {
+                    // تفريغ المحتوى السابق
+                    productsContainer.innerHTML = '';
+
+                    // إضافة المنتجات إلى الصفحة
                     data.products.forEach(product => {
-                        const productHTML = `
-                            <div class="product-details">
-                                <div class="product-img">
-                                    <img src="${product.image}" alt="${product.title}">
-                                </div>
-                                <p >$${product.title}</p>
-                                <p >$${product.price}</p>
-                                <button class="shop-now" >Buy Now</button>
+                        // إنشاء عنصر div جديد لكل منتج
+                        const productDiv = document.createElement('div');
+                        productDiv.classList.add('product-details');
+                        
+                        // إضافة المحتوى داخل div
+                        productDiv.innerHTML = `
+                            <div class="product-img">
+                                <img src="${product.image}" alt="${product.title}">
                             </div>
+                            <p class="product_title">${product.title}</p>
+                            <p class="product_price">$${product.price}  <span class="favorite-icon">
+                    <i class="fa-regular fa-heart"></i>
+                </span></p>
+                            <button class="shop-now">Buy Now</button>
                         `;
-                        productsContainer.innerHTML += productHTML;
+                        // إضافة المنتج إلى الحاوية
+                        productsContainer.appendChild(productDiv);
                     });
                 } else {
                     console.error("Element with class 'productoverview' not found.");
@@ -103,6 +107,46 @@ document.addEventListener('DOMContentLoaded', () => {
             console.error('Error fetching data:', error);
         }
     }
+    
 
+    function renderProducts(productsToDisplay) {
+        productsContainer.innerHTML = ''; // تفريغ المنتجات السابقة
+        if (productsToDisplay.length === 0) {
+            productsContainer.innerHTML = `<p>No products found for this category.</p>`;
+            return;
+        }
+        productsToDisplay.forEach(product => {
+            productsContainer.innerHTML += `
+                <div class="product-details">
+                    <div class="product-img">
+                        <img src="${product.image}" alt="${product.title}">
+                    </div>
+                    <p>${product.title}</p>
+                    <p>$${product.price}</p>
+                    
+                    <button class="shop-now">Buy Now</button>
+                </div>
+            `;
+        });
+    }
+
+    function filterProductsByCategory(category) {
+        if (category === 'all') {
+            renderProducts(allProducts); // عرض جميع المنتجات
+        } else {
+            const filteredProducts = allProducts.filter(product => product.category === category);
+            renderProducts(filteredProducts); // عرض المنتجات المصفاة
+        }
+    }
+
+    categorySelect.addEventListener('change', (event) => {
+        const selectedCategory = event.target.value;
+        filterProductsByCategory(selectedCategory);
+    });
+
+    
+
+    // تحميل المنتجات عند تحميل الصفحة
     fetchProducts();
 });
+
