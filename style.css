@@ -83,73 +83,7 @@ input {
 
 
 
-body {
-    font-family: Arial, sans-serif;
-}
 
-
-/* Navbar Styles */
-.nav-bar {
-    position: fixed;
-    display: flex;
-    align-items: center;
-    /* Center items vertically */
-    justify-content: space-between;
-    /* Space between logo and links */
-    padding-block: 30px;
-    /* Padding for the navbar */
-
-    padding-inline-start: 100px;
-    padding-inline-end: 870px;
-    background-color: #f0ece4;
-
-    z-index: 1000;
-    /* لجعل الشريط يظهر فوق العناصر الأخرى */
-}
-
-/* Logo Styling */
-.nav-bar p {
-    color: #333;
-    /* Text color for the logo */
-    font-size: 1.5em;
-    /* Size of the logo text */
-
-}
-
-/* Nav Links Styling */
-.nav-links {
-    display: flex;
-    /* Display links in a row */
-    list-style: none;
-    /* Remove bullets from list */
-}
-
-.nav-links li {
-    margin-inline-start: 60px;
-    /* Space between the links */
-}
-
-.nav-links a {
-    color: #333;
-    /* Link text color */
-    text-decoration: none;
-    /* Remove underline */
-    font-size: 1em;
-    /* Font size for links */
-
-}
-#cart{
-    margin-inline-start: 800px;
-}
-#logout{
-    margin-inline-start: 900px;
-}
-
-/* Hover Effect */
-.nav-links a:hover {
-    color: #717fe0;
-    /* Change color on hover */
-}
 /*=====================slider=====================*/
 .banner {
     display: flex;
@@ -330,8 +264,8 @@ h1 {
     border: 1px solid #e0e0e0; /* إضافة حدود رقيقة */
 }
 .product_title{
-    color: black;
-    font-size: 12px;
+    color: rgb(1, 1, 1);
+    font-size: 14px;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
 }
 .product_title:hover{
@@ -399,114 +333,6 @@ h1 {
     background-color: black;
     color: #DDDDDD;
 }
-
-/* Footer Styles */
-.footer {
-    background-color: #222;
-    color: #ccc;
-    padding: 70px 20px;
-    font-family: Arial, sans-serif;
-}
-
-.footer-container {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    max-inline-size: 1200px;
-    margin: 0 auto;
-
-}
-
-.footer-column {
-    flex: 1;
-    min-inline-size: 200px;
-}
-
-.footer-column>h3 {
-    color: #fff;
-    margin-block-end: 30px;
-    font-size: 1.2em;
-}
-
-.footer-column ul {
-    list-style: none;
-
-}
-
-.footer-column ul li {
-    margin-block-end: 15px;
-    color: #ccc;
-    font-size: 0.8em;
-}
-
-.footer-column ul li:hover {
-    color: #717fe0;
-    cursor: pointer;
-}
-
-.footer-column p {
-    font-size: 0.8em;
-    line-height: 1.6;
-}
-
-.footer-column input[type="email"] {
-    inline-size: 100%;
-    padding: 10px;
-    margin-block-start: 10px;
-    border: none;
-    background-color: #333;
-    color: #fff;
-    outline: none;
-    font-size: 0.9em;
-}
-
-.footer-column button {
-    inline-size: 100%;
-    padding: 10px;
-    background-color: #717fe0;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    margin-block-start: 10px;
-    font-size: 0.9em;
-}
-
-.footer-column button:hover {
-    color: #5b69c3;
-    background-color: white
-}
-
-
-
-/* Footer Bottom */
-.footer-bottom {
-    margin-top: 30px;
-    text-align: center;
-    font-size: 0.9em;
-    padding: 20px 0;
-    border-top: 1px solid #444;
-}
-
-.footer-bottom a {
-    color: #717fe0;
-    text-decoration: none;
-}
-
-.footer-bottom a:hover {
-    text-decoration: underline;
-}
-
-.payment-icons {
-    margin-top: 10px;
-}
-
-.payment-icons img {
-    width: 40px;
-    height: 25px;
-    margin-right: 10px;
-    vertical-align: middle;
-}
-
 .about, .contact {
     padding-block-start: 60px;
 }
