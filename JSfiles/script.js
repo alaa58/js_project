@@ -31,7 +31,6 @@ setInterval(() => {
 updateSliderContent(currentIndex);
 
 /*====================products====================*/
-// import { addToCart,updateCartCounter } from "../JSfiles/MixedFunctios";
 
 
 document.addEventListener("DOMContentLoaded", () => {

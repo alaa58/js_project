@@ -1,4 +1,4 @@
-// import { updateCartCounter } from "../JSfiles/MixedFunctios";
+import { updateCartCounter} from './MixedFunctios.js';
 
 let listcart = JSON.parse(localStorage.getItem("listcart")) || {};
 var total;
@@ -27,16 +27,18 @@ function add() {
     });
     total += product.cn * product.afterDiscount;
     body.appendChild(row);
+    
   });
+
 }
 
-add();
 
+add();
 function delette(id) {
   delete listcart[id];
-  localStorage.setItem("listcart", JSON.stringify(listcart));
-  location.reload();
+  // localStorage.setItem("listcart", JSON.stringify(listcart));
   add();
+  updateCartCounter();
   calc();
 }
 
@@ -48,15 +50,21 @@ function calc() {
   pr.innerHTML = `${total.toFixed(2)}$`;
 }
 
+//----------------------------
+document.querySelectorAll('input[name="shipping"]').forEach((input) => {
+  input.addEventListener("click", (event) => {
+    choosse(event.target);
+  });
+});
 
 document
   .getElementById("chose")
   .setAttribute("href", `../HTMLfiles/UserDetails.html?check=${0}`);
 let choos;
 
-function choosse(el) {
-  console.log("ad");
-  if (el.value != "local") {
+function choosse(event) {
+  
+  if (event.value != "local") {
     pr.innerHTML = `${(total + 50).toFixed(2)}$`;
     choos = 1;
   } else {
