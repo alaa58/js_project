@@ -65,7 +65,6 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
           </div>`;
     discount(product.price, discountCN);
-    
 
     let count;
     count = Number(document.querySelector(".numbers").innerHTML);
@@ -84,29 +83,58 @@ document.addEventListener("DOMContentLoaded", () => {
       .querySelector(".add_cart")
       .addEventListener("click", () => addToCart(product, count));
 
-
-
-
-      //------------------------------
-
-
-
+    //------------------------------
   }
-let afterdiscoun
+  let afterdiscoun;
   function discount(pric, discoun) {
     afterdiscoun = (discoun * pric) / 100;
-    document.querySelector(".afterdiscount").innerHTML = `${
-      (pric - afterdiscoun).toFixed(2)
-    }$`;
+    document.querySelector(".afterdiscount").innerHTML = `${(
+      pric - afterdiscoun
+    ).toFixed(2)}$`;
   }
-  
 });
-  new Swiper(".sale_Sec", {
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    slidesPerView: 3,
-    spaceBetween: 10,
-    loop:true,
-  });
+// new Swiper(".sale_Sec", {
+//   navigation: {
+//     nextEl: ".swiper-button-next",
+//     prevEl: ".swiper-button-prev",
+//   },
+//   slidesPerView: 3,
+//   spaceBetween: 10,
+//   loop: true,
+// });
+
+const response = await fetch("https://fakestoreapi.in/api/products");
+const data = await response.json();
+const productsToDisplay = data.products.slice(0, 5);
+productsToDisplay.forEach((product) => {
+  let div = document.createElement("div");
+  div.classList.add("product");
+  div.innerHTML = `<div class="iconns">
+                <span><i class="fa-solid fa-cart-shopping"></i></span>
+                <span> <i class="fa-solid fa-heart"></i></span>
+                <i class="fa-solid fa-share"></i>
+              </div>
+              <span class="sale_discount">20%</span>
+              <img src="${product.image}" />
+              <h3><a href="#">${product.model}</a></h3>
+              <div class="Stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <div class="price">
+                <p><span>${product.price}$</span></p>
+                
+              </div>
+              <button class="shop-now">Buy Now</button>
+
+            `;
+
+            div.querySelector(".shop-now").addEventListener("click", () => {    
+              addToCart(product,1); 
+          });
+
+  document.querySelector(".products").appendChild(div);
+});

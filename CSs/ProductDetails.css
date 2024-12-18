@@ -131,14 +131,16 @@ justify-content: space-evenly;
   margin-top: 100px;
   padding: 0px 0;
   border-bottom: 1px solid rgb(204, 204, 204);
+  padding-left: 10px;
 }
 .top_slide::after{
   position: absolute;
   content: '';
   bottom: -1px;
   left: 0;
-  width: 100px;
+  width: 120px;
   height: 2px;
+  padding-left: 20px;
   background-color:rgb(76, 76, 179);
 }
 .top_slide h2{
@@ -157,6 +159,7 @@ box-shadow: 5px 5px 10px gray;
 border: 1px solid rgb(211, 211, 211);
 border-radius: 10px;
 width: 12% ;
+height: auto;
 margin-left: 20px;
 }
 .product img{
@@ -233,11 +236,15 @@ cursor: pointer;
   right: 10px;
 }
 .products{
+  
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
+.product h3 a{
+  font-size: 20px;
+}
+/* 
 .mySwiper{
   overflow: hidden;
 position: relative;
@@ -245,5 +252,18 @@ position: relative;
 
 .swiper-slide{
 width:20% !important;
-}
+}  */
 
+
+.shop-now {
+
+  padding: 10px 20px;
+  background-color: #717fe0;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 50px;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
