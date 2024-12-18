@@ -1,18 +1,20 @@
 img{
-
     width: 425px;
-    height: 404px;
+    height: auto;
+}
+.images{
+  width: auto;
 }
 .all{
 display: flex;
 justify-content: space-evenly;
 margin-top: 150px;
-height: 500px;
+height: auto;
 margin-bottom: 60px;
 }
 .contain{
-    width: 503px;
-    height: 399px;
+    max-width: 60%;
+    height: auto;
 }
 .category{
     color: rgb(76, 76, 179);
@@ -154,7 +156,7 @@ overflow: hidden;
 box-shadow: 5px 5px 10px gray;
 border: 1px solid rgb(211, 211, 211);
 border-radius: 10px;
-width: 12%;
+width: 12% ;
 margin-left: 20px;
 }
 .product img{
@@ -235,3 +237,13 @@ cursor: pointer;
   justify-content: center;
   align-items: center;
 }
+
+.mySwiper{
+  overflow: hidden;
+position: relative;
+}
+
+.swiper-slide{
+width:20% !important;
+}
+

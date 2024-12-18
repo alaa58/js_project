@@ -1,4 +1,5 @@
 import { addToCart } from "./MixedFunctios.js";
+
 // localStorage.clear();
 document.addEventListener("DOMContentLoaded", () => {
   const productId = new URLSearchParams(window.location.search).get("id");
@@ -64,6 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
           </div>`;
     discount(product.price, discountCN);
+    
 
     let count;
     count = Number(document.querySelector(".numbers").innerHTML);
@@ -81,12 +83,30 @@ document.addEventListener("DOMContentLoaded", () => {
     document
       .querySelector(".add_cart")
       .addEventListener("click", () => addToCart(product, count));
-  }
 
+
+
+
+      //------------------------------
+
+
+
+  }
+let afterdiscoun
   function discount(pric, discoun) {
-    let afterdiscoun = (discoun * pric) / 100;
+    afterdiscoun = (discoun * pric) / 100;
     document.querySelector(".afterdiscount").innerHTML = `${
-      pric - afterdiscoun
+      (pric - afterdiscoun).toFixed(2)
     }$`;
   }
+  
 });
+  new Swiper(".sale_Sec", {
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    slidesPerView: 3,
+    spaceBetween: 10,
+    loop:true,
+  });
