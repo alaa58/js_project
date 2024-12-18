@@ -24,11 +24,13 @@ thead{
     background-color: rgb(221, 221, 221);
     height: 50px;
     border: none;
+    
 }
 thead td{
     font-weight: 600;
     font-size: 20px;
     text-align: center;
+    background-color: #f0ece4;
 
 }
 tbody tr{
@@ -61,13 +63,14 @@ background-color: rgb(238, 238, 238);
     cursor: pointer;
 }
 .check:hover{
-    background-color: rgb(118, 131, 186);
+    background-color: #45a049;
         border-radius: 50px;
         border-style: none;
-        font-size: 20px;
+        font-size: 14px;
     }
 
 .Summary{
+    
     width: 30%;
     margin-left: 30px;
     margin-right: 20px;
@@ -78,7 +81,7 @@ flex-direction: column;
 }
 .Summary > p{
 padding-bottom: 15px;
-color: rgb(81, 82, 82);
+color: #717fe0
 }
 .Summary >*{
     border-bottom: 1px solid rgb(230, 229, 229);
@@ -100,10 +103,12 @@ margin: 10px 20px;
     padding-bottom: 10px;
 }
 .Summary button{
+    background-color: #717fe0;
+    color: white;
     padding: 20px;
-margin: 10px 70px;
+    margin: 10px 80px;
     border-style: none;
-    width: 70%;
+    width: 50%;
     font-weight: 600;
     font-size: 15px;
     border-radius: 50px;

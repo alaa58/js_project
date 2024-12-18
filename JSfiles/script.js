@@ -1,7 +1,19 @@
+/*===============scrool-up===============*/
+window.addEventListener("scroll", function() {
+  const scrollToTopButton = document.getElementById("scrollToTop");
+  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+      scrollToTopButton.style.display = "block";
+  } else {
+      scrollToTopButton.style.display = "none";
+  }
+});
+
+document.getElementById("scrollToTop").addEventListener("click", function() {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
 /*================navbar&footer===========*/
-// localStorage.clear();
-import { addToCart} from './MixedFunctios.js';
-// localStorage.clear();
+
 /*================slider===============*/
 const images = [
   "images/phone.png",
@@ -31,61 +43,37 @@ setInterval(() => {
 updateSliderContent(currentIndex);
 
 /*====================products====================*/
-
+import { addToCart } from "./MixedFunctios.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-  let allProducts = []; // تخزين جميع المنتجات
+  let allProducts = []; // Store all products
+  let currentPage = 1; // Keep track of the current page
   const categorySelect = document.getElementById("categorySelect");
   const productsContainer = document.querySelector(".productoverview ");
+  const loadMoreButton = document.querySelector(".loadmore-button");
 
-  async function fetchProducts() {
+  // Function to fetch products
+  async function fetchProducts(page) {
     try {
-      const response = await fetch("https://fakestoreapi.in/api/products");
-
+      const response = await fetch(`https://fakestoreapi.in/api/products?page=${page}&limit=12`);
+      
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
 
       const data = await response.json();
 
-      // التحقق من محتوى البيانات
+      // Check if products are available
       if (data && data.products && Array.isArray(data.products)) {
-        allProducts = data.products; // تخزين جميع المنتجات
+        const products = data.products;
+        allProducts = allProducts.concat(products); // Append new products to existing
 
-        // التأكد من وجود عنصر المنتجات
-        if (productsContainer) {
-          // تفريغ المحتوى السابق
-          productsContainer.innerHTML = "";
+        // Render products
+        renderProducts(allProducts);
 
-          // إضافة المنتجات إلى الصفحة
-          data.products.forEach((product) => {
-            // إنشاء عنصر div جديد لكل منتج
-            const productDiv = document.createElement("div");
-            productDiv.classList.add("product-details");
-
-            // إضافة المحتوى داخل div
-            productDiv.innerHTML = `
-                            <div class="product-img">
-                                <img src="${product.image}" alt="${product.title}">
-                            </div>
-                            <a href='../HTMLfiles/productDetails.html?id=${product.id}'  class="product_title" >${product.title}</a>
-                          
-                            <p class="product_price">$${product.price}  <span class="favorite-icon">
-                    <i class="fa-regular fa-heart"></i>
-                </span></p>
-                            <button class="shop-now">Buy Now</button>
-                        `;
-                        productDiv.querySelector(".shop-now").addEventListener("click", () => {
-                         
-                            addToCart(product,1); 
-                    
-                        });
-                        
-            // إضافة المنتج إلى الحاوية
-            productsContainer.appendChild(productDiv);
-          });
-        } else {
-          console.error("Element with class 'productoverview' not found.");
+        // If no products were returned, disable the "Load More" button
+        if (products.length === 0) {
+          loadMoreButton.disabled = true;
         }
       } else {
         console.error("Invalid data format or missing 'products' array.");
@@ -95,46 +83,67 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  // Function to render products
   function renderProducts(productsToDisplay) {
-    productsContainer.innerHTML = ""; // تفريغ المنتجات السابقة
-    if (productsToDisplay.length === 0) {
-      productsContainer.innerHTML = `<p>No products found for this category.</p>`;
+    if (!productsContainer) {
+      console.error("Products container not found.");
       return;
     }
+
+    // Render all the products
+    productsContainer.innerHTML = ""; // Clear existing products
     productsToDisplay.forEach((product) => {
-      productsContainer.innerHTML += `
-                <div class="product-details">
-                    <div class="product-img">
-                        <img src="${product.image}" alt="${product.title}">
-                    </div>
-                    <p>${product.title}</p>
-                    <p>$${product.price}</p>
-                    
-                    <button class="shop-now">Buy Now</button>
-                </div>
-            `;
-      document
-        .querySelector(".shop-now")
-        .addEventListener("click", () => addToCart(product,1));
+      const productDiv = document.createElement("div");
+      productDiv.classList.add("product-details");
+      
+      // Create product item
+      productDiv.innerHTML = `
+        <div class="product-img">
+            <img src="${product.image}" alt="${product.title}">
+        </div>
+                      <a href='../HTMLfiles/productDetails.html?id=${product.id}'  class="product_title" >${product.title}</a>
+        <p class="product_price">$${product.price} <span class="favorite-icon">
+            <i class="fa-regular fa-heart"></i>
+        </span></p>
+        <button class="shop-now">Buy Now</button>
+      `;
+      
+      // Add "Buy Now" functionality
+      productDiv.querySelector(".shop-now").addEventListener("click", () => {
+
+        addToCart(product, 1);
+
+      });
+      // Append the product div to the container
+      productsContainer.appendChild(productDiv);
     });
   }
 
+  // Function to handle category change
   function filterProductsByCategory(category) {
     if (category === "all") {
-      renderProducts(allProducts); // عرض جميع المنتجات
+      
+      renderProducts(allProducts); // Show all products
     } else {
       const filteredProducts = allProducts.filter(
         (product) => product.category === category
       );
-      renderProducts(filteredProducts); // عرض المنتجات المصفاة
+      renderProducts(filteredProducts); // Show filtered products
     }
   }
 
+  // Event listener for category filter
   categorySelect.addEventListener("change", (event) => {
     const selectedCategory = event.target.value;
     filterProductsByCategory(selectedCategory);
   });
 
-  // تحميل المنتجات عند تحميل الصفحة
-  fetchProducts();
+  // Event listener for "Load More" button
+  loadMoreButton.addEventListener("click", () => {
+    currentPage++;
+    fetchProducts(currentPage); // Fetch more products
+  });
+
+  // Initial fetch of products when the page loads
+  fetchProducts(currentPage);
 });
