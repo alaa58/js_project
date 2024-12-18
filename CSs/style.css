@@ -6,6 +6,7 @@
     box-sizing: border-box;
 }
 
+
 /*==================LOGIN=====================*/
 @keyframes zoomIn {
     0% {
@@ -27,7 +28,7 @@
     
 }
 #login_page{
-    width: 100%; /* تعيين عرض الصورة */
+    width: 100%; 
     height: auto; /* الحفاظ على النسبة الأصلية */
     animation: zoomIn 2s ease-out; /* تطبيق الأنيميشن مع تحديد المدة */
     

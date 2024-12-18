@@ -1,5 +1,7 @@
 /*================navbar&footer===========*/
-
+// localStorage.clear();
+import { addToCart} from './MixedFunctios.js';
+// localStorage.clear();
 /*================slider===============*/
 const images = [
   "images/phone.png",
@@ -29,7 +31,8 @@ setInterval(() => {
 updateSliderContent(currentIndex);
 
 /*====================products====================*/
-import { addToCart } from "./MixedFunctios.js";
+// import { addToCart,updateCartCounter } from "../JSfiles/MixedFunctios";
+
 
 document.addEventListener("DOMContentLoaded", () => {
   let allProducts = []; // تخزين جميع المنتجات
@@ -66,18 +69,19 @@ document.addEventListener("DOMContentLoaded", () => {
                             <div class="product-img">
                                 <img src="${product.image}" alt="${product.title}">
                             </div>
-                            <a href='/productDetails.html?id=${product.id}'  class="product_title" >${product.title}</a>
+                            <a href='../HTMLfiles/productDetails.html?id=${product.id}'  class="product_title" >${product.title}</a>
                           
                             <p class="product_price">$${product.price}  <span class="favorite-icon">
                     <i class="fa-regular fa-heart"></i>
                 </span></p>
                             <button class="shop-now">Buy Now</button>
                         `;
-            productDiv
-              .querySelector(".shop-now")
-              .addEventListener("click", () => {
-                addToCart(product);
-              });
+                        productDiv.querySelector(".shop-now").addEventListener("click", () => {
+                         
+                            addToCart(product,1); 
+                    
+                        });
+                        
             // إضافة المنتج إلى الحاوية
             productsContainer.appendChild(productDiv);
           });
@@ -112,7 +116,7 @@ document.addEventListener("DOMContentLoaded", () => {
             `;
       document
         .querySelector(".shop-now")
-        .addEventListener("click", () => addToCart(product));
+        .addEventListener("click", () => addToCart(product,1));
     });
   }
 

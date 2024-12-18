@@ -1,10 +1,14 @@
 let listcart = JSON.parse(localStorage.getItem("listcart")) || {};
-export function addToCart(produuct) {
+export function addToCart(produuct,con) {
   if (!listcart[produuct.id]) {
     listcart[produuct.id] = { ...produuct };
     listcart[produuct.id].cn = 1;
   } else {
-    listcart[produuct.id].cn++;
+    console.log(con);
+    console.log(typeof(con));
+    listcart[produuct.id].cn+=con;
+    console.log(listcart[produuct.id].cn);
+
   }
 
   let discountCN = produuct.discount || 0;

@@ -49,6 +49,11 @@ margin-bottom: 60px;
     cursor: pointer;    
     
   }
+  .dec ,.inc{
+    font-size: 28px;
+    font-weight: bolder;
+
+  }
   .discount{
     background-color:rgb(216, 216, 237);
     color: rgb(76, 76, 179);

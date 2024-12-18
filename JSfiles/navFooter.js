@@ -5,7 +5,7 @@ let counttotal=0;
   Object.values(listcart).forEach((product) => {
     counttotal+=product.cn;
   });
-  fetch("navbar.html")
+  fetch("../HTMLfiles/navbar.html")
     .then((response) => response.text())
     .then((data) => {
 
@@ -17,7 +17,7 @@ let counttotal=0;
 }
 
 function loadFooter() {
-  fetch("footer.html")
+  fetch("../HTMLfiles/footer.html")
     .then((response) => response.text())
     .then((data) => {
       document.querySelector("footer").innerHTML = data;
@@ -25,7 +25,6 @@ function loadFooter() {
 }
 document.addEventListener("DOMContentLoaded", function () {
   loadNavbar();
-
   loadFooter();
 });
 // localStorage.clear();

@@ -1,4 +1,4 @@
-import { updateCartCounter } from "./MixedFunctios.js";
+// import { updateCartCounter } from "../JSfiles/MixedFunctios";
 
 let listcart = JSON.parse(localStorage.getItem("listcart")) || {};
 var total;
@@ -10,9 +10,7 @@ function add() {
     const row = document.createElement("tr");
     row.innerHTML = `  <td class="td1">
               <img src="${product.image}" />
-              <a href=href='/productDetails.html?id=${product.id}'>  ${
-      product.model
-    }</a>
+              <a href='../HTMLfiles/productDetails.html?id=${product.id}'>${product.model }</a>
             </td>
             <td class="td2">${product.afterDiscount}</td>
             <td class="td3">
@@ -50,11 +48,14 @@ function calc() {
   pr.innerHTML = `${total.toFixed(2)}$`;
 }
 
+
 document
   .getElementById("chose")
-  .setAttribute("href", `/UserDetails.html?check=${0}`);
+  .setAttribute("href", `../HTMLfiles/UserDetails.html?check=${0}`);
 let choos;
-function choose(el) {
+
+function choosse(el) {
+  console.log("ad");
   if (el.value != "local") {
     pr.innerHTML = `${(total + 50).toFixed(2)}$`;
     choos = 1;
@@ -65,5 +66,5 @@ function choose(el) {
 
   document
     .getElementById("chose")
-    .setAttribute("href", `/UserDetails.html?check=${choos}`);
+    .setAttribute("href", `../HTMLfiles/UserDetails.html?check=${choos}`);
 }
