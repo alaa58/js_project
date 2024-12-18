@@ -18,6 +18,7 @@ margin-bottom: 60px;
 }
 .category{
     color: rgb(76, 76, 179);
+    text-transform:uppercase;
 }
 .lbl{
     color: #1d2025;
@@ -25,7 +26,7 @@ margin-bottom: 60px;
 }
 .des{
     color: #68707d ;
-    font-size: 16px;
+    font-size: 21px;
 }
 .count , .add_cart {
     background-color: #ececec;
@@ -67,6 +68,7 @@ margin-bottom: 60px;
   .cn_cart{
 display: flex;
 justify-content: space-between;
+margin-top: 20px;
   }
   .add_cart{
     background-color:rgb(76, 76, 179);
@@ -82,6 +84,7 @@ cursor: pointer;
     justify-content: space-between;
     align-items: center;
     font-size: 15px;
+    margin-top: 30px;
 }
  .prices >div{
     display: flex;
@@ -184,6 +187,7 @@ color: goldenrod;
   display: flex;
   justify-content: center;
   align-items: center;
+
   gap: 10px;
 }
 .price p{

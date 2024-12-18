@@ -132,9 +132,9 @@ productsToDisplay.forEach((product) => {
 
             `;
 
-            div.querySelector(".shop-now").addEventListener("click", () => {    
-              addToCart(product,1); 
-          });
+  div.querySelector(".shop-now").addEventListener("click", () => {
+    addToCart(product, 1);
+  });
 
   document.querySelector(".products").appendChild(div);
 });
