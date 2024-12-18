@@ -52,10 +52,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const productsContainer = document.querySelector(".productoverview ");
   const loadMoreButton = document.querySelector(".loadmore-button");
 
+  // Variable to store the selected category
+  let selectedCategory = "all";
+
   // Function to fetch products
   async function fetchProducts(page) {
     try {
-      const response = await fetch(`https://fakestoreapi.in/api/products?page=${page}&limit=12`);
+      const response = await fetch(`https://fakestoreapi.in/api/products?page=${page}&limit=8`);
       
       if (!response.ok) {
         throw new Error("Network response was not ok");
@@ -68,8 +71,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const products = data.products;
         allProducts = allProducts.concat(products); // Append new products to existing
 
-        // Render products
-        renderProducts(allProducts);
+        // Render filtered products based on category
+        renderProducts(allProducts, selectedCategory);
 
         // If no products were returned, disable the "Load More" button
         if (products.length === 0) {
@@ -83,16 +86,23 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Function to render products
-  function renderProducts(productsToDisplay) {
+  // Function to render products based on category
+  function renderProducts(productsToDisplay, category) {
     if (!productsContainer) {
       console.error("Products container not found.");
       return;
     }
 
-    // Render all the products
-    productsContainer.innerHTML = ""; // Clear existing products
-    productsToDisplay.forEach((product) => {
+    // Filter products by category before rendering
+    const filteredProducts = category === "all"
+      ? productsToDisplay
+      : productsToDisplay.filter((product) => product.category === category);
+
+    // Clear existing products
+    productsContainer.innerHTML = "";
+
+    // Render the filtered products
+    filteredProducts.forEach((product) => {
       const productDiv = document.createElement("div");
       productDiv.classList.add("product-details");
       
@@ -101,7 +111,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="product-img">
             <img src="${product.image}" alt="${product.title}">
         </div>
-                      <a href='../HTMLfiles/productDetails.html?id=${product.id}'  class="product_title" >${product.title}</a>
+        <a href='../HTMLfiles/productDetails.html?id=${product.id}' class="product_title">${product.title}</a>
         <p class="product_price">$${product.price} <span class="favorite-icon">
             <i class="fa-regular fa-heart"></i>
         </span></p>
@@ -110,32 +120,18 @@ document.addEventListener("DOMContentLoaded", () => {
       
       // Add "Buy Now" functionality
       productDiv.querySelector(".shop-now").addEventListener("click", () => {
-
         addToCart(product, 1);
-
       });
+
       // Append the product div to the container
       productsContainer.appendChild(productDiv);
     });
   }
 
   // Function to handle category change
-  function filterProductsByCategory(category) {
-    if (category === "all") {
-      
-      renderProducts(allProducts); // Show all products
-    } else {
-      const filteredProducts = allProducts.filter(
-        (product) => product.category === category
-      );
-      renderProducts(filteredProducts); // Show filtered products
-    }
-  }
-
-  // Event listener for category filter
   categorySelect.addEventListener("change", (event) => {
-    const selectedCategory = event.target.value;
-    filterProductsByCategory(selectedCategory);
+    selectedCategory = event.target.value; // Update selected category
+    renderProducts(allProducts, selectedCategory); // Re-render with new category filter
   });
 
   // Event listener for "Load More" button
