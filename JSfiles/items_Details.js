@@ -105,18 +105,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const response = await fetch("https://fakestoreapi.in/api/products");
 const data = await response.json();
-const productsToDisplay = data.products.slice(0, 5);
+var random=Math.random()*data.products.length;
+const productsToDisplay = data.products.slice(random, random+5);
 productsToDisplay.forEach((product) => {
   let div = document.createElement("div");
   div.classList.add("product");
-  div.innerHTML = `<div class="iconns">
-                <span><i class="fa-solid fa-cart-shopping"></i></span>
+  div.innerHTML = `
+  <div class="iconns">
+                <span><i class="buy fa-solid fa-cart-shopping"></i></span>
                 <span> <i class="fa-solid fa-heart"></i></span>
                 <i class="fa-solid fa-share"></i>
               </div>
               <span class="sale_discount">20%</span>
               <img src="${product.image}" />
-              <h3><a href="#">${product.model}</a></h3>
+              <h3><a class="s" href='../HTMLfiles/productDetails.html?id=${product.id}'>${product.model}</a></h3>
               <div class="Stars">
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
@@ -125,7 +127,7 @@ productsToDisplay.forEach((product) => {
                 <i class="fa-solid fa-star"></i>
               </div>
               <div class="price">
-                <p><span>${product.price}$</span></p>
+                <p><span class="prii">${product.price}$</span></p>
                 
               </div>
               <button class="shop-now">Buy Now</button>
@@ -133,6 +135,10 @@ productsToDisplay.forEach((product) => {
             `;
 
   div.querySelector(".shop-now").addEventListener("click", () => {
+    addToCart(product, 1);
+  });
+  
+  div.querySelector(".fa-solid").addEventListener("click", () => {
     addToCart(product, 1);
   });
 

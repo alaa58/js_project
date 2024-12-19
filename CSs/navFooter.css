@@ -25,6 +25,10 @@ header.nav-bar {
   font-weight: bold;
   color: #333;
 }
+.logo a{
+  text-decoration: none;
+  color: #222;
+}
 
 .nav-links {
   display: flex;
@@ -40,8 +44,9 @@ header.nav-bar {
 .nav-links a {
   text-decoration: none;
   color: #333;
-  font-size: 1rem;
+  font-size: 1.4rem;
   transition: color 0.3s ease;
+  font-weight: bolder;
 }
 
 .nav-links a:hover {
@@ -90,7 +95,7 @@ header.nav-bar {
   position: absolute;
   top: -5px;
   right: -10px;
-  background-color: #dc3545; /* Red for cart count */
+  background-color: #dc3545; 
   color: white;
   font-size: 0.8rem;
   border-radius: 50%;
@@ -98,7 +103,7 @@ header.nav-bar {
 }
 
 .content {
-  margin-top: 100px; /* Push content down below the navbar */
+  margin-top: 100px;
   padding: 20px;
 }
 
@@ -119,16 +124,16 @@ header.nav-bar {
 }
 .login-icon,
 .cart-icon {
-  font-size: 1.5rem; /* Icon size */
-  color: #333; /* Icon color */
-  text-decoration: none; /* Remove underline from links */
+  font-size: 1.5rem; 
+  color: #333; 
+  text-decoration: none; 
   padding: 10px;
-  margin-left: 20px; /* Space between icons */
+  margin-left: 20px;
 }
 
 .login-icon:hover,
 .cart-icon:hover {
-  color: #717fe0; /* Change color on hover */
+  color: #717fe0; 
 }
 
  
@@ -136,8 +141,11 @@ header.nav-bar {
 .footer {
 background-color: #222;
 color: #ccc;
-padding: 70px 20px;
+padding-top:40px;
+padding-bottom:5px;
+
 font-family: Arial, sans-serif;
+
 }
 
 .footer-container {
@@ -145,19 +153,20 @@ display: flex;
 justify-content: space-around;
 flex-wrap: wrap;
 max-inline-size: 1200px;
-margin: 0 auto;
+margin: auto auto;
 
 }
 
 .footer-column {
 flex: 1;
 min-inline-size: 200px;
+margin-right: 100px;
 }
 
 .footer-column>h3 {
 color: #fff;
 margin-block-end: 30px;
-font-size: 1.2em;
+font-size: 1.5em;
 }
 
 .footer-column ul {
@@ -168,7 +177,7 @@ list-style: none;
 .footer-column ul li {
 margin-block-end: 15px;
 color: #ccc;
-font-size: 0.8em;
+font-size: 1.3em;
 }
 
 .footer-column ul li:hover {
@@ -177,7 +186,7 @@ cursor: pointer;
 }
 
 .footer-column p {
-font-size: 0.8em;
+font-size: 1.3em;
 line-height: 1.6;
 }
 
@@ -189,7 +198,7 @@ border: none;
 background-color: #333;
 color: #fff;
 outline: none;
-font-size: 0.9em;
+font-size: 1.4em;
 }
 
 .footer-column button {
@@ -200,7 +209,7 @@ color: #fff;
 border: none;
 cursor: pointer;
 margin-block-start: 10px;
-font-size: 0.9em;
+font-size: 1.3em;
 }
 
 .footer-column button:hover {
@@ -212,9 +221,9 @@ background-color: white
 
 /* Footer Bottom */
 .footer-bottom {
-margin-top: 30px;
+margin-top: 35px;
 text-align: center;
-font-size: 0.9em;
+font-size: 1.4em;
 padding: 20px 0;
 border-top: 1px solid #444;
 }
@@ -233,8 +242,12 @@ margin-top: 10px;
 }
 
 .payment-icons img {
-width: 40px;
-height: 25px;
+width: 50px;
+height: 45px;
 margin-right: 10px;
 vertical-align: middle;
+}
+h3 p li {
+  font-size: 15px;
+  font-weight: bolder;
 }

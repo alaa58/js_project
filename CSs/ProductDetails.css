@@ -97,7 +97,9 @@ justify-content: space-evenly;
  .price{
   font-size: 24px;
 }
-
+.prii{
+  color: rgb(134, 1, 141);
+}
 .afterdiscount{
     text-decoration: line-through;
       color: #999;
@@ -162,6 +164,8 @@ box-shadow: 5px 5px 10px gray;
 border: 1px solid rgb(211, 211, 211);
 border-radius: 10px;
 width: 12% ;
+transition: transform 0.3s ease-in-out;
+
 height: auto;
 margin-left: 20px;
 }
@@ -179,7 +183,7 @@ margin-left: 20px;
 color: #1d2025;
 }
 .Stars i{
-color: goldenrod;
+color: rgb(252, 213, 113);
 }
 
 .price
@@ -238,6 +242,11 @@ cursor: pointer;
 
 .product:hover .iconns{
   right: 10px;
+}
+
+.s:hover{
+  color: rgb(107, 107, 186);
+
 }
 .products{
   

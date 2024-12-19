@@ -99,10 +99,16 @@ document.addEventListener("DOMContentLoaded", () => {
       productDiv.classList.add("product-details");
 
       productDiv.innerHTML = `
+      <div class="iconns">
+                <span><i class="fa-solid fa-cart-shopping"></i></span>
+                <span> <i class="fa-solid fa-heart"></i></span>
+                <i class="fa-solid fa-share"></i>
+              </div>
+
         <div class="product-img">
             <img src="${product.image}" alt="${product.title}">
         </div>
-        <a href='../HTMLfiles/productDetails.html?id=${product.id}' class="product_title">${product.title}</a>
+        <a class="titl" href='../HTMLfiles/productDetails.html?id=${product.id}' class="product_title">${product.title}</a>
         <p class="product_price">$${product.price} <span class="favorite-icon">
             <i class="fa-regular fa-heart"></i>
         </span></p>
@@ -110,6 +116,9 @@ document.addEventListener("DOMContentLoaded", () => {
       `;
 
       productDiv.querySelector(".shop-now").addEventListener("click", () => {
+        addToCart(product, 1);
+      });
+      productDiv.querySelector(".fa-solid").addEventListener("click", () => {
         addToCart(product, 1);
       });
 
