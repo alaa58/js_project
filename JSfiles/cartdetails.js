@@ -36,7 +36,7 @@ function add() {
 add();
 function delette(id) {
   delete listcart[id];
-  // localStorage.setItem("listcart", JSON.stringify(listcart));
+  localStorage.setItem("listcart", JSON.stringify(listcart));
   add();
   updateCartCounter();
   calc();
