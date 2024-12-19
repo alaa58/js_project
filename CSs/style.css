@@ -9,17 +9,14 @@
 /*==================LOGIN=====================*/
 @keyframes zoomIn {
     0% {
-        opacity: 0; /* الصورة مخفية */
-        transform: scale(0.8); /* بداية الصورة أصغر */
+        opacity: 0; 
+        transform: scale(0.8); 
     }
     100% {
-        opacity: 1; /* الصورة تظهر */
-        transform: scale(1); /* تكبير الصورة إلى حجمها الطبيعي */
+        opacity: 1; 
+        transform: scale(1); 
     }
 }
-
-/* تطبيق الأنيميشن على الصورة */
-
 
 #login_page {
     display: flex;
@@ -27,14 +24,13 @@
     
 }
 #login_page{
-    width: 100%; /* تعيين عرض الصورة */
-    height: auto; /* الحفاظ على النسبة الأصلية */
-    animation: zoomIn 2s ease-out; /* تطبيق الأنيميشن مع تحديد المدة */
+    width: 100%; 
+    height: auto; 
+    animation: zoomIn 2s ease-out; 
     
 }
 #login_header {
     margin: 80px 0;
-    /*border: #5b69c3 2px solid ;*/
     border-radius: 20px;
     height: 600px;
     width: 500px;
@@ -80,8 +76,6 @@ input {
     background-color:#719fe0;
     color: #ffff;
 }
-
-
 
 
 /*=====================slider=====================*/
@@ -190,12 +184,10 @@ input {
 .icons {
     display: flex;
     flex-direction: row;
-    /* Aligns text and image side by side */
     align-items: center;
     padding-inline-start: 76px;
     block-size: 200px;
     gap: 750px;
-    /* Space between text and image */
 }
 
 h1 {
@@ -204,9 +196,7 @@ h1 {
 
 .button-container {
     display: flex;
-    /* Aligns buttons horizontally */
     gap: 10px;
-    /* Adds space between the buttons */
     padding-inline-end: 20px;
 }
 #search{
@@ -216,30 +206,20 @@ h1 {
 
 .icon-button {
     background-color: transparent;
-    /* Removes default button background */
     border: 1px solid #ccc;
-    /* Adds a subtle border */
     padding: 8px 15px;
-    /* Adds padding around the icon and text */
     cursor: pointer;
-    /* Changes cursor to pointer on hover */
     display: flex;
-    /* Aligns icon and text horizontally */
     align-items: center;
-    /* Centers icon and text vertically */
     border-radius: 8px;
-    /* Slightly rounded corners */
     gap: 8px;
-    /* Adds space between icon and text */
     transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 
 .icon-button:hover {
     background-color: #7180e0;
-    /* Changes background color on hover */
     border-color: #999;
-    /* Changes border color on hover */
     color: white;
 }
 
@@ -247,21 +227,21 @@ h1 {
 .productoverview {
     padding-inline: 150px;
     display: flex;
-    flex-wrap: wrap; /* يسمح للعناصر بالتوزيع عبر عدة صفوف */
-    gap: 20px; /* مسافة بين العناصر */
-    justify-content: space-between; /* توزيع العناصر بشكل متساوي عبر الصف */
+    flex-wrap: wrap; 
+    gap: 20px; 
+    justify-content: space-between;
 }
 
 .product-details {
     background-color: #fff; 
     padding: 15px;
-    border-radius: 10px; /* جعل الزوايا مدورة بشكل أكبر */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* إضافة ظل ناعم */
-    text-align: center; /* محاذاة النص إلى الوسط */
+    border-radius: 10px; 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); 
+    text-align: center; 
     width:250px;
-    box-sizing: border-box; /* التأكد من أن المسافات لا تؤثر على الأبعاد */
-    transition: transform 0.3s ease-in-out; /* إضافة تأثير ناعم عند التفاعل */
-    border: 1px solid #e0e0e0; /* إضافة حدود رقيقة */
+    box-sizing: border-box; 
+    transition: transform 0.3s ease-in-out;
+    border: 1px solid #e0e0e0; 
 }
 .product_title{
     color: rgb(1, 1, 1);
@@ -278,55 +258,46 @@ h1 {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .product-details:hover {
-    transform: translateY(-10px); /* رفع العنصر عند التفاعل */
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* تعزيز الظل عند hover */
+    transform: translateY(-10px); 
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
 .product-img {
     width: 100%;
     padding-block: 20px;
-    border-radius: 8px; /* جعل حواف الصور مدورة */
+    border-radius: 8px; 
 }
 
 .product-img img {
     width: 100%;
-    aspect-ratio: 1 / 1.2; /* الحفاظ على النسبة بين العرض والطول */
-    object-fit: cover; /* تجعل الصورة تملأ الإطار */
+    aspect-ratio: 1 / 1.2; 
+    object-fit: cover; 
     display: block;
-    transition: transform 0.3s ease, filter 0.3s ease; /* تأثير ناعم عند التفاعل مع الصورة */
-    border-radius: 8px; /* إضافة حواف مدورة للصورة */
+    transition: transform 0.3s ease, filter 0.3s ease; 
+    border-radius: 8px; 
 }
 
 .product-img img:hover {
-    transform: scale(1.05); /* تكبير الصورة بشكل ناعم عند hover */
-    filter: brightness(0.95); /* تعديل السطوع عند hover */
+    transform: scale(1.05); 
+    filter: brightness(0.95); 
 }
 
 .loadmore {
     display: flex;
     justify-content: center;
-    /* محاذاة أفقية للزر */
     padding-block: 100px;
 
 }
 
 .loadmore-button {
     padding: 12px 25px;
-    /* حجم الزر */
     font-size: 1.2em;
-    /* حجم النص */
     color: black;
-    /* لون النص */
     background-color: #DDDDDD;
-    /* لون الخلفية الأساسي للزر */
     border: none;
-    /* إزالة الحدود */
     border-radius: 24px;
-    /* زوايا دائرية */
     cursor: pointer;
-    /* شكل المؤشر عندما يكون فوق الزر */
     transition: background-color 0.3s ease, color 0.3s ease;
-    /* تأثير التغيير */
 }
 
 .loadmore-button:hover {
@@ -339,9 +310,7 @@ h1 {
 
 .about-img, .contact-img {
     width: 100%;
-    /* يقلل عرض الصورة إلى 50% من عرض العنصر الحاوي */
     height: auto;
-    /* يحافظ على نسبة العرض إلى الارتفاع الأصلية */
 
 }
 
