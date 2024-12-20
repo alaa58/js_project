@@ -1,4 +1,4 @@
-import { updateCartCounter} from './MixedFunctios.js';
+import { updateCartCounter } from "./MixedFunctios.js";
 
 let listcart = JSON.parse(localStorage.getItem("listcart")) || {};
 var total;
@@ -8,11 +8,13 @@ function add() {
   body.innerHTML = ``;
   Object.values(listcart).forEach((product) => {
     const row = document.createElement("tr");
-    row.innerHTML = `  <td class="td1">
-              <img src="${product.image}" />
-              <a href='../HTMLfiles/productDetails.html?id=${product.id}'>${product.model }</a>
-            </td>
-            <td class="td2">${product.afterDiscount}</td>
+    row.innerHTML = `  <th class="td1" scope="row">
+              <a href='../HTMLfiles/productDetails.html?id=${product.id}'>              <img src="${product.image}" />
+${
+      product.model
+    }</a>
+            </th>
+            <td class="td2">${product.afterDiscount}$</td>
             <td class="td3">
               <div>
                 <p>${product.cn}</p>
@@ -27,16 +29,13 @@ function add() {
     });
     total += product.cn * product.afterDiscount;
     body.appendChild(row);
-    
   });
-
 }
-
 
 add();
 function delette(id) {
   delete listcart[id];
-  localStorage.setItem("listcart", JSON.stringify(listcart));
+  // localStorage.setItem("listcart", JSON.stringify(listcart));
   add();
   updateCartCounter();
   calc();
@@ -63,7 +62,6 @@ document
 let choos;
 
 function choosse(event) {
-  
   if (event.value != "local") {
     pr.innerHTML = `${(total + 50).toFixed(2)}$`;
     choos = 1;

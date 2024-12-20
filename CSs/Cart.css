@@ -19,6 +19,7 @@ table{
     border-collapse: collapse; 
     border-spacing: 0;
     margin-left: 20px;
+    height: auto;
 }
 thead{
     background-color: rgb(221, 221, 221);
@@ -35,23 +36,23 @@ thead td{
 }
 tbody tr{
     border-bottom: 1px solid rgb(230, 229, 229);
-    height: 10px;
+    height: auto;
     text-align: center;
 }
 .td1{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    /* display: flex; 
+     justify-content: center; 
+    align-items: center; */
 }
 .td1 a{
 text-decoration: none;
 color: black;
-font-size: 14px;
+padding-left: 20px;
+font-size: 16px;
 }
 .td1 a:hover{
     text-decoration: none;
     color: black;
-    font-size: 14px;
     font-weight: bolder;
     }
 
