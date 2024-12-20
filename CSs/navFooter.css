@@ -162,6 +162,10 @@ flex: 1;
 min-inline-size: 200px;
 margin-right: 100px;
 }
+.Nam{
+  font-weight: bolder;
+  color:  #717fe0;
+}
 
 .footer-column>h3 {
 color: #fff;
