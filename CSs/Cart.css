@@ -71,14 +71,13 @@ background-color: rgb(238, 238, 238);
     }
 
 .Summary{
-    
     width: 30%;
     margin-left: 30px;
     margin-right: 20px;
     display: flex;
 flex-direction: column; 
    box-shadow: 10px 10px 20px rgb(175, 171, 171);
-   height: 400px;
+   height: 100%;
 }
 .Summary > p{
 padding-bottom: 15px;
@@ -90,6 +89,8 @@ color: #717fe0
 .Subtotal{
     display: flex;
 justify-content: space-around;
+width: 100%;
+
 }
 .Subtotal>p{
     margin-right: 80px;
