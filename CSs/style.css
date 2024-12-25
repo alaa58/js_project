@@ -343,27 +343,37 @@ h1 {
     color: #DDDDDD;
 }
 .about, .contact {
-    padding-block-start: 60px;
+   
 }
 
 .about-img, .contact-img {
     width: 100%;
     height: auto;
+    margin-block-start: 70px;
 
 }
 
 .storyANDimg, .missionANDimg {
     display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
 }
 
 .story, .mission {
-    margin-block: 100px;
+    width: 100%;
+    max-width: 1000px;
     padding-inline: 100px;
     color: #444;
     font-family: 'Times New Roman', Times, serif;
     line-height: 1.5;
 
 }
+.mission-text, .story-text{
+    max-height: 400px;
+    overflow-y: auto;
+}
+
 
 .mission-image, .story-img {
     margin-inline: 50px;
@@ -377,17 +387,12 @@ h1 {
 
 .story>h2, .mission>h2 {
     margin-block: 40px;
-    font-size: 28px;
+    font-size: 32px;
 }
-
-
-.container {
+.about-container, .contact-container {
     display: flex;
         max-width: 100%;
         background-color: #fff;
-        margin-block: 50px;
-        margin-inline: 100px;
-        padding-inline: 70px;
         padding-block: 50px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         border: 1px solid #ddd;
@@ -398,11 +403,16 @@ h1 {
         align-content: center;
 }
 
+.contact-container {
+        padding-inline: 70px;
+        margin-inline: 100px;
+        margin-block: 50px;
+}
+
 .contact-form {
     flex: 1;
     margin-right: 20px;
-    display: flex
-;
+    display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     /* align-content: center; */
@@ -426,6 +436,8 @@ h1 {
     color: #333;
     text-align: center;
 }
+
+
 
 .input-group {
     margin-bottom: 15px;
@@ -494,6 +506,8 @@ button:hover {
 .contact-info a:hover {
     color: #719fe0;
 }
+
+
 
 .scroll-to-top {
     position: fixed;
