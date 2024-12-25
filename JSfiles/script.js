@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   async function fetchProducts(page) {
     try {
-      const response = await fetch(`https://fakestoreapi.in/api/products?page=${page}&limit=8`);
+      const response = await fetch(`https://fakestoreapi.in/api/products?page=${page}&limit=10`);
       
       if (!response.ok) {
         throw new Error("Network response was not ok");

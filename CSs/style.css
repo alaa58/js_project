@@ -20,6 +20,7 @@
 
 #login_page {
     display: flex;
+    flex-wrap: wrap;
     gap: 100px;
     
 }
@@ -27,6 +28,8 @@
     width: 100%; 
     height: auto; 
     animation: zoomIn 2s ease-out; 
+    justify-content: center;
+    align-items: center;
     
 }
 #login_header {
@@ -81,13 +84,14 @@ input {
 /*=====================slider=====================*/
 .banner {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     background-color: #f0ece4;
     padding: 150px 150px 110px;
     gap: 100px;
 }
 .banner-content {
-    max-inline-size: 50%;
+   /* max-inline-size: 50%;*/
 }
 
 .banner-content h2 {
@@ -150,9 +154,12 @@ input {
     background-color: rgb(255, 255, 255);
     display: flex;
     justify-content: center;
-    gap: 80px;
+    gap: 50px;
     padding-block: 60px;
     block-size: 100%;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
 }
 
 .women, .men, .accessories {
@@ -200,7 +207,10 @@ input {
     align-items: center;
     padding-inline-start: 76px;
     block-size: 200px;
-    gap: 960px;
+    /* gap: 960px; */
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-between;
 }
 
 h1 {
@@ -249,19 +259,22 @@ h1 {
 }
 
 .product-details {
-    position: relative;
-    overflow: hidden;
-
-    border-radius: 10px;
-    background-color: #fff; 
-    padding: 15px;
-    border-radius: 10px; 
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4); 
-    text-align: center; 
-    width:250px;
-    box-sizing: border-box; 
-    transition: transform 0.3s ease-in-out;
-    border: 1px solid #e0e0e0; 
+    display: flex;
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+        background-color: #fff;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+        text-align: center;
+        width: 250px;
+        box-sizing: border-box;
+        transition: transform 0.3s ease-in-out;
+        border: 1px solid #e0e0e0;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-between;
 }
 .product_title{
     color: rgb(1, 1, 1);
@@ -370,27 +383,38 @@ h1 {
 
 .container {
     display: flex;
-    max-width: 100%;
-
-    background-color: #fff;
-    margin-block: 50px;
-    margin-inline: 100px;
-    padding-inline: 70px;
-    padding-block: 50px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border: 1px solid #ddd;
-    border-radius: 8px;
+        max-width: 100%;
+        background-color: #fff;
+        margin-block: 50px;
+        margin-inline: 100px;
+        padding-inline: 70px;
+        padding-block: 50px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
 }
 
 .contact-form {
     flex: 1;
-    margin-right: 100px;
+    margin-right: 20px;
+    display: flex
+;
+    flex-direction: column;
+    flex-wrap: wrap;
+    /* align-content: center; */
+    justify-content: center;
 }
 
 .contact-info {
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     flex: 1;
-    padding-left: 100px;
+    padding-left: 20px;
     border-left: 3px solid #ddd;
 }
 
