@@ -8,22 +8,24 @@ function add() {
   body.innerHTML = ``;
   Object.values(listcart).forEach((product) => {
     const row = document.createElement("tr");
-    row.innerHTML = `  <th class="td1" scope="row">
-              <a href='../HTMLfiles/productDetails.html?id=${
+    row.classList.add("row")
+    row.innerHTML = `  <th class="td1 col">
+              <a  href='../HTMLfiles/productDetails.html?id=${
                 product.id
-              }'>              <img src="${product.image}" />
+              }'>   
+              <img  src="${product.image}" />
 ${product.model}</a>
             </th>
-            <td class="td2">${product.afterDiscount}$</td>
-            <td class="td3">
+            <td class="td2 col">${product.afterDiscount}$</td>
+            <td class="td3 col">
               <div>
                 <p>${product.cn}</p>
               </div>
             </td>
-            <td class="td4">${(product.cn * product.afterDiscount).toFixed(
+            <td class="td4 col">${(product.cn * product.afterDiscount).toFixed(
               2
             )}$</td>
-            <td class="td5"><button class="btnn">&times;</button></td>`;
+            <td class="td5 col"><button class="btnn">&times;</button></td>`;
     row.querySelector(".btnn").addEventListener("click", () => {
       delette(product.id);
     });

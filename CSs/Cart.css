@@ -37,12 +37,8 @@ thead td{
 tbody tr{
     border-bottom: 1px solid rgb(230, 229, 229);
     height: auto;
-    text-align: center;
-}
-.td1{
-    /* display: flex; 
-     justify-content: center; 
-    align-items: center; */
+    text-align: center;  
+
 }
 .td1 a{
 text-decoration: none;
@@ -75,6 +71,7 @@ background-color: rgb(238, 238, 238);
     margin-left: 30px;
     margin-right: 20px;
     display: flex;
+    align-items: center;
 flex-direction: column; 
    box-shadow: 10px 10px 20px rgb(175, 171, 171);
    height: 100%;
@@ -107,12 +104,29 @@ margin: 10px 20px;
 .Summary button{
     background-color: #717fe0;
     color: white;
-    padding: 20px;
+    padding: 15px;
     margin: 10px 80px;
     border-style: none;
-    width: 50%;
+    width: auto;
     font-weight: 600;
     font-size: 15px;
     border-radius: 50px;
 cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .all{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .table{
+        width: 80%;
+    }
+    .Summary{
+        width: 80%;
+       margin-top: 50px;
+    }
+
 }
