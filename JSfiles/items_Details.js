@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
     discountCN *= 10;
     if (discountCN > 100) discountCN /= 10;
 
-    containCard.innerHTML = `   <div class="images">
+    containCard.innerHTML = `<div class="images">
             <img src="${product.image}" />
           </div>
           <div class="contain">

@@ -1,9 +1,9 @@
 img{
-    width: 425px;
+    width: 70%;
     height: auto;
 }
 .images{
-  width: auto;
+  width:40%;
 }
 .all{
 display: flex;
@@ -35,7 +35,7 @@ margin-bottom: 60px;
     justify-content: center;
     align-items: center;
     border: none;
-    height: 40px;
+    height: auto;
 }
 .count{
   width: 150px;
@@ -68,7 +68,7 @@ margin-bottom: 60px;
   .cn_cart{
 display: flex;
 justify-content: space-between;
-margin-top: 20px;
+margin: auto;
   }
   .add_cart{
     background-color:rgb(76, 76, 179);
@@ -104,7 +104,7 @@ justify-content: space-evenly;
     text-decoration: line-through;
       color: #999;
       font-size: 24px;
-      margin: 1rem 0;
+      margin: 1rem 2rem;
     }
 
       .decreament , .increament{
@@ -163,7 +163,7 @@ overflow: hidden;
 box-shadow: 5px 5px 10px gray;
 border: 1px solid rgb(211, 211, 211);
 border-radius: 10px;
-width: 12% ;
+/* width: 12% ; */
 transition: transform 0.3s ease-in-out;
 
 height: auto;
@@ -254,22 +254,12 @@ cursor: pointer;
   justify-content: center;
   align-items: center;
 }
+
 .product h3 a{
   font-size: 20px;
 }
-/* 
-.mySwiper{
-  overflow: hidden;
-position: relative;
-}
-
-.swiper-slide{
-width:20% !important;
-}  */
-
 
 .shop-now {
-
   padding: 10px 20px;
   background-color: #717fe0;
   color: #fff;

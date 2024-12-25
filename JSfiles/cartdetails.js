@@ -9,10 +9,10 @@ function add() {
   Object.values(listcart).forEach((product) => {
     const row = document.createElement("tr");
     row.innerHTML = `  <th class="td1" scope="row">
-              <a href='../HTMLfiles/productDetails.html?id=${product.id}'>              <img src="${product.image}" />
-${
-      product.model
-    }</a>
+              <a href='../HTMLfiles/productDetails.html?id=${
+                product.id
+              }'>              <img src="${product.image}" />
+${product.model}</a>
             </th>
             <td class="td2">${product.afterDiscount}$</td>
             <td class="td3">
@@ -35,7 +35,7 @@ ${
 add();
 function delette(id) {
   delete listcart[id];
-  // localStorage.setItem("listcart", JSON.stringify(listcart));
+  localStorage.setItem("listcart", JSON.stringify(listcart));
   add();
   updateCartCounter();
   calc();
