@@ -14,7 +14,7 @@ function add() {
                 product.id
               }'>   
               <img  src="${product.image}" />
-${product.model}</a>
+                  ${product.model}</a>
             </th>
             <td class="td2 col">${product.afterDiscount}$</td>
             <td class="td3 col">

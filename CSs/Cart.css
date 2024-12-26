@@ -5,7 +5,6 @@ img{
 .all{
     display: flex;  
     margin:100px 0px 80px 0px;
-
 }
 body p{
     font-size: 20px;
@@ -13,19 +12,27 @@ display: flex;
 justify-content: center;
 
 }
-table{
+.tbl{
     width:70%;
     box-shadow: 10px 10px 20px rgb(175, 171, 171);
     border-collapse: collapse; 
     border-spacing: 0;
     margin-left: 20px;
     height: auto;
-}
+  }
+  
+  .tbl th, 
+  .tbl td {
+    text-align: center;
+    padding: 10px; 
+  }
+  
+
+  
 thead{
     background-color: rgb(221, 221, 221);
     height: 50px;
     border: none;
-    
 }
 thead td{
     font-weight: 600;
@@ -40,6 +47,8 @@ tbody tr{
     text-align: center;  
 
 }
+
+
 .td1 a{
 text-decoration: none;
 color: black;

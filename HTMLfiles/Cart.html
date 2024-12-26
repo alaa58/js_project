@@ -4,67 +4,68 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Electronai Shop</title>
+    <link rel="stylesheet" href="../Bootstrap/bootstrap.css" />
     <link rel="stylesheet" href="../CSs/Cart.css" />
     <link rel="stylesheet" href="../CSs/navFooter.css" />
-    <link rel="stylesheet" href="../Bootstrap/bootstrap.css">
-
-
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
       rel="stylesheet"
     />
   </head>
   <body>
-    <header class="nav-bar">
-        
-      </header>
-    
-    <!-- <p>Your Cart</p> -->
-    <div class="all row">
-      <table class="table col">
-        <thead>
-          <tr>
-            <th scope="col">Product</th>
-            <th scope="col">Price</th>
-            <th scope="col">Quantity</th>
-            <th scope="col">Subtotal</th>
-            <th scope="col"></th>
-          </tr>
-        </thead>
-        <tbody>
-         
-        </tbody>
-      </table>
-      <div class="Summary row col">
-        <p>Summary</p>
-        <div class="Subtotal col">
-          <p>Subtotal</p>
-          <p id="sub">117$</p>
-        </div>
-        <div class="shipping col">
-          <label>
-            <input class="radi" type="radio" name="shipping" value="local" checked />
-         Free Shipping
-          </label>
-          <label>
-            <input type="radio" name="shipping" value="free"   />
-            Local Shipping "50$"
-          </label>
-        </div>
-        <div class="Subtotal col">
-          <p>Total</p>
-          <p id="pricee">125$</p>
-        </div>
-     <a id="chose" class="col"> <button class="check">Process to Checkout</button></a>  
-      </div>
-    </div>
-    <footer class="footer">
-      </footer>
-  
-    <script src="../JSfiles/cartdetails.js" type="module"  ></script>
-    <script src="../JSfiles/navFooter.js"  type="module"  ></script>
+    <header class="nav-bar"></header>
+    <main>
+      <section class="all">
+        <table class="tbl">
+          <thead>
+            <tr class="row">
+              <th class="col">Product</th>
+              <th class="col">Price</th>
+              <th class="col">Quantity</th>
+              <th class="col">Subtotal</th>
+              <th class="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+           
+          </tbody>
+        </table>
+        <section class="Summary row ">
+          <p>Summary</p>
+          <div class="Subtotal col">
+            <p>Subtotal</p>
+            <p id="sub">117$</p>
+          </div>
+          <div class="shipping col">
+            <label>
+              <input
+                class="radi"
+                type="radio"
+                name="shipping"
+                value="local"
+                checked
+              />
+              Free Shipping
+            </label>
+            <label>
+              <input type="radio" name="shipping" value="free" />
+              Local Shipping "50$"
+            </label>
+          </div>
+          <div class="Subtotal col">
+            <p>Total</p>
+            <p id="pricee">125$</p>
+          </div>
+          <a id="chose" class="col">
+            <button class="check">Process to Checkout</button></a
+          >
+        </section>
+      </section>
+    </main>
+    <footer class="footer"></footer>
+
+    <script src="../JSfiles/cartdetails.js" type="module"></script>
+    <script src="../JSfiles/navFooter.js" type="module"></script>
     <script src="../Bootstrap/bootstrap.js"></script>
-
-
   </body>
 </html>
